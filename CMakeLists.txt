@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 2.8)
 
-set(PROJECT mtrx_tmpld)
+set(PROJECT matrix-v3.0)
 
 project (${PROJECT})
 
