@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 2.8)
 
-set(TESTS_FOR_PROJECT mtrx_tmpld)
+set(TESTS_FOR_PROJECT matrix-v3.0)
 
 project(Tests)
 
