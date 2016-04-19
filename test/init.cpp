@@ -12,16 +12,13 @@ SCENARIO("Matrix init", "[init]")
 		WHEN("Create instansce of Matrix") 
 		{
 			Matrix<int> A(rows, columns);
-			Matrix<int> B(rows*2+columns,columns*2+rows);
-			Matrix<int> C;
+			Matrix<int> B;
 			THEN("The number of rows and columns must be preserved") 
 			{
 				REQUIRE(A.Rows() == rows);
 				REQUIRE(A.Columns() == columns);
-				REQUIRE(B.Rows() == 2*rows+columns);
-				REQUIRE(B.Columns() == 2*columns+rows);
-				REQUIRE(C.Rows() == 0);
-				REQUIRE(C.Columns() == 0);
+				REQUIRE(B.Rows() == 0);
+				REQUIRE(B.Columns() == 0);
 			}
 		}
 	}
