@@ -31,6 +31,7 @@ SCENARIO("Matrix operator >>", "[Fill]")
 {
 	std::ifstream input("A.txt");
 	Matrix<int> A(2, 2);
+	REQUIRE( input >>  );
 	REQUIRE( input >> A );
 	REQUIRE( A[0][0] == 2 );
 	REQUIRE( A[0][1] == 3 );
