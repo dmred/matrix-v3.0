@@ -33,7 +33,7 @@ std::istream &operator >> (std::istream &input, Matrix<T> &matr);
         }
     }
     return input;
-}
+};
 template <typename T>
 class Matrix
 {
