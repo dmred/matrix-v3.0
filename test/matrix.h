@@ -7,7 +7,7 @@ template <typename T>
 class Matrix;
 
 template <typename T>
-std::ostream &operator << (std::ostream &out, const Matrix<T> &temp)
+std::ostream &operator << (std::ostream &out, const Matrix<T> &temp)/*
 {
 	for (int i = 0; i < temp.n; i++)
 	{
@@ -18,9 +18,10 @@ std::ostream &operator << (std::ostream &out, const Matrix<T> &temp)
 		out << endl;
 	}
 	return out;
-}
+}*/
 template <typename T>
 std::istream &operator >> (std::istream &input, Matrix<T> &matr)
+/*
 {
     for (int i = 0; i < matr.n; i++) 
     {
@@ -33,7 +34,7 @@ std::istream &operator >> (std::istream &input, Matrix<T> &matr)
         }
     }
     return input;
-};
+};*/
 template <typename T>
 class Matrix
 {
