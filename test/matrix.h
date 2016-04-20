@@ -1,6 +1,4 @@
 #pragma once
-#ifndef matrix_h
-#define matrix_h
 #include <iostream>
 #include "matrixexception.h"
 using namespace std;
@@ -88,4 +86,4 @@ std::istream &operator >> (std::istream &input, Matrix<T> &matr)
     return input;
 };*/
 #include "matrix.cpp"
-#endif
+
