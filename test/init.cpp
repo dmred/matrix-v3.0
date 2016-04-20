@@ -31,9 +31,9 @@ SCENARIO("Matrix operator >>", "[Fill]")
 	std::cout << endl;
 	REQUIRE( input >> A );
 	REQUIRE( A[0][0] == 2 );
-	REQUIRE( A[0][1] == 3 );
-	REQUIRE( A[1][0] == 2 );
-	REQUIRE( A[1][1] == 1 );
+	REQUIRE( A[0][1] == 1 );
+	REQUIRE( A[1][0] == 1 );
+	REQUIRE( A[1][1] == 2 );
 }
 SCENARIO("Matrix operator <<", "[out]") 
 {
@@ -101,72 +101,72 @@ SCENARIO("Matrix operator ==", "[comparison]")
 }
 SCENARIO("Exception fill", "[fillerror]")
 {
-	bool flagA=false, flagB=false;
+	bool f1=false, f2=false;
 	Matrix<int> A(3, 2);
 	Matrix<int> B(2, 2);
 	try {
 		std::ifstream("A.txt") >> A;
 	}
 	catch (MatrixException &) {
-		flagA = true;
+		f1 = true;
 	}
-	REQUIRE(flagA);
+	REQUIRE(f1);
 	try {
 		std::ifstream("404.txt") >> A;
 	}
 	catch (MatrixException &) {
-		flagB = true;
+		f2 = true;
 	}
-	REQUIRE(flagB);
+	REQUIRE(f2);
 }
-SCENARIO("Exception empty", "[emptyerror]")
+SCENARIO("Exception emty", "[emptyerror]")
 {
-	bool flag=false;
+	bool f=false;
 	Matrix<int> A;
 	try {
 	int* row = A[0];
 	}
 	catch (MatrixException &) {
-		flag = true;
+		f = true;
 	}
-		REQUIRE(flag);
+		REQUIRE(f);
 }
 SCENARIO("Exception row's index", "[indexerror]")
 {
-	bool flag=false;
+	bool f=false;
 	Matrix<int> A(2, 2);
 	std::ifstream("A.txt") >> A;
 	try {
 	int* row = A[404];
 	}
 	catch (MatrixException &) {
-		flag = true;
+		f = true;
 	}
-		REQUIRE(flag);
+		REQUIRE(f);
 }
 SCENARIO("Exception size", "[sizerror]")
 {
-	bool flag=false;
+	bool f=false;
 	Matrix<int> A(2, 2);
 	Matrix<int> B(3, 3);
 	try {
 		A+B;
 	}
 	catch (MatrixException &) {
-		flag = true;
+		f = true;
 	}
-		REQUIRE(flag);
+		REQUIRE(f);
 }
 SCENARIO("Exception size for *", "[sizerror1]")
 {
-	bool flag=false;
+	bool f=false;
 	Matrix<int> A(2, 2);
 	Matrix<int> B(3, 3);
 	try {
 		A*B;
 	}
 	catch (MatrixException &) {
-		flag = true;
+		f = true;
 	}
-		REQUIRE(flag);
+		REQUIRE(f);
 }
