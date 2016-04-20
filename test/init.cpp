@@ -37,8 +37,8 @@ SCENARIO("Matrix operator >>", "[Fill]")
 }
 SCENARIO("Matrix operator <<", "[out]") 
 {
-	Matrix<int> A(2, 2);
-	Matrix<int> B(2, 2);
+	Matrix<double> A(2, 2);
+	Matrix<double> B(2, 2);
 	std::ifstream("A.txt") >> A;
 	fstream out; 
 	out.open("out.txt");
@@ -49,10 +49,10 @@ SCENARIO("Matrix operator <<", "[out]")
 }
 SCENARIO("Matrix operator +", "[addition]") 
 {
-	Matrix<int> A(2, 2);
-	Matrix<int> B(2, 2);
-	Matrix<int> expected(2, 2);
-	Matrix<int> result(2, 2);
+	Matrix<long> A(2, 2);
+	Matrix<long> B(2, 2);
+	Matrix<long> expected(2, 2);
+	Matrix<long> result(2, 2);
 	std::ifstream("A.txt") >> A;
 	std::ifstream("B.txt") >> B;
 	std::ifstream("A+B.txt") >> result;
