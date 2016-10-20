@@ -14,6 +14,7 @@ std::ostream &operator << (std::ostream &out, const Matrix<T> &temp)/*
 		for (int j = 0; j < temp.m; j++)
 		{
 			out << temp.matrix[i][j] << " ";
+			//asd
 		}
 		out << endl;
 	}
